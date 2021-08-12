@@ -29,4 +29,11 @@ If the GRES information in the slurm.conf file fully describes those resources (
 
 **NOTE**: Slurm support for gres/mps requires the use of the select/cons_tres plugin. For more information on how to configure MPS, see [MPS_Management](https://slurm.schedmd.com/gres.html#MPS_Management)
 
+By default, no GRES are enabled in the cluster's configuration. 
+You must explicitly specify which GRES are to be managed in the slurm.conf configuration file.
+The configuration parameters of interest are **GresTypes** and **Gres**.
+
+
+
+
 
