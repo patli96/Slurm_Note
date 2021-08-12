@@ -8,6 +8,14 @@ $ sinfo
 
 # Display node and other information
 $ sinfo -Nl
+
+# Display required information
+$ sinfo -o "%20N %10c %10m %25f %20G"
+# N = node name
+# c = number of corers
+# m = memory
+# f = features, often it will be the architecture or type of associated gpu
+# G = gres type and number
 ```
 
 #### Update node states
