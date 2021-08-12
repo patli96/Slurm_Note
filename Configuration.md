@@ -16,24 +16,14 @@ This file shoud be only on the computer where SlurmDBD executes and should only 
 
 This should be protected from unauthorized access since it contains a database password.
 
-### Archive Info
+</br></br>
+## gres.conf
 
-ArchiveDir
-> Where the file will be placed after a purge event has happened and archive for that element is set to true. 
-> **/tmp by default**.
-> The **format** for this files name is `$ArchiveDir/$ClusterName_$ArchiveObject_archive_$BeginTimeStamp_$endTimeStamp` 
+- Generic Resource management
 
-ArchiveEvents
-> Whether archive events when purging them.
-> **No by default**.
+If the GRES information in the slurm.conf file does not fully describe those resources, then a gres.conf file shoule be included on each compute node.
 
-ArchiveJobs
-> Whether archive jobs when purging them.
-> **No by default**.
+If the GRES information in the slurm.conf file fully describes those resources (i.e. no "Cores", "File" or "Links" specification is required for that GRES type or that information is automatically detected), that information may be omitted from the gres.conf file and only the configuration information in the slurm.conf file will be used. The gres.conf file may be omitted completely if the configuration information in the slurm.conf file fully describes all GRES.
 
-ArchiveResvs
-> Whether archive reservations when purging them.
-> **No by default**.
-
-ArchiveScript
+**NOTE**: Slurm support for gres/mps requires the use of the select/cons_tres plugin. For more information on how to configure MPS, see [MPS_Management](https://slurm.schedmd.com/gres.html#MPS_Management)
 
