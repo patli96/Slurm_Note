@@ -1,5 +1,9 @@
 # BurstBuffer
 
+**Key Features**
+- Exists between compute nodes and backend storage.
+- Instead of writing data to the backend storage, data can be kept at burst buffer after one round of computation.  
+  When doing the second round of computation, data can be moved from burst buffer to the backend simultaneously.
 
 **Why we need Burst Buffer?**  
   - Many programs do I/O in bursts, such as read, compute, write, etc.
